@@ -47,6 +47,7 @@
 			artist-name="{{item.ar}}"
 			album-name="{{item.al.name}}"
 			other-info="{{item.alia}}"
+			song-id="{{item.id}}"
 		 >
 		 </single-song-item>
 		 </view>
