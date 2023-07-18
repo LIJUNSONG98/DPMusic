@@ -1,0 +1,8 @@
+var formateAlia = function(alia){
+	if(alia.length === 0) {
+		return ""
+	}
+	return ' · '+ alia[0]
+}
+
+module.exports = formateAlia

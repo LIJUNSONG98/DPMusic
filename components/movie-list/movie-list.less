@@ -1,0 +1,79 @@
+/* components/movie-list/movie-list.wxss */
+.movie-list {
+	background-color: rgba(250, 250, 250, 0.897);
+	display: flex;
+	padding: 30rpx 30rpx 200rpx 30rpx;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	.item {
+		overflow: hidden;
+		border-radius: 8rpx;
+		width: 330rpx;
+		height: 280rpx;
+		margin-bottom: 30rpx;
+		.cover {
+			position: relative;
+			width: 100%;
+			height: 180rpx;
+			.img {
+				width: 100%;
+				height: 100%;
+			}
+			.controls {
+				padding: 0 10rpx 0 10rpx;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: absolute;
+				top: 130rpx;
+				width: 100%;
+				height: 50rpx;
+				background-color: rgba(0, 0, 0, 0.507);
+				.play-count {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					.icon {
+						height: 24rpx;
+						width: 24rpx;
+						margin-right: 8rpx;
+					}
+					.number {
+						padding-top: 6rpx;
+						height: 38rpx;
+						line-height: 38rpx;
+						font-size: 18rpx;
+						text-align: center;
+						color: #fff;
+					}
+				}
+				.duration {
+					padding-right: 20rpx;
+					font-size: 18rpx;
+					color: #fff;
+				}
+			}
+		}
+		.info {
+			box-sizing: border-box;
+			width: 100%;
+			height: 100rpx;
+			padding: 12rpx 18rpx 0 18rpx;
+			background-color: #fff;
+			overflow-wrap: break-word !important;
+			.txt {
+				font-size: 24rpx;
+				font-weight: 500;
+				line-height: 28rpx;
+				overflow-wrap: break-word !important;
+				overflow: hidden;
+				word-break: break-all;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+			}
+		}
+	}
+}

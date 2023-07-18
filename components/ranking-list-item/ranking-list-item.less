@@ -1,0 +1,67 @@
+/* components/ranking-list-item/ranking-list-item.wxss */
+.ranking-list-item {
+	background-color: #fff;
+	padding: 0 20rpx 0 20rpx;
+	margin-bottom: 20rpx;
+	border-radius: 16rpx;
+	overflow: hidden;
+	.header {
+		height: 80rpx;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		.name {
+			font-size: 28rpx;
+			font-weight: bold;
+			color: #333;
+		}
+		.frequency {
+			font-size: 20rpx;
+			color: rgb(201, 201, 201);
+		}
+	}
+	.content {
+		width: 100%;
+		height: 150rpx;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 10rpx 0 20rpx 0;
+	   .cover {
+			 flex-shrink: 0;
+			 border-radius: 12rpx;
+			 overflow: hidden;
+			 width: 150rpx;
+			 height: 100%;
+		 }
+		 .example {
+			 flex-shrink: 0;
+			 flex:1;
+			 display: flex;
+			 flex-direction: column;
+			 justify-content: space-between;
+			 align-items: flex-start;
+			 height: 150rpx;
+			 padding: 0 0 0 28rpx;
+			 .item {
+				 display: flex;
+				 align-items: center;	
+				 justify-content: flex-start;			 
+				 .index {
+					 margin-right: 8rpx;
+					 font-size: 26rpx;
+					 font-weight: bold;
+				 }
+				 .name {
+					 font-size: 28rpx;
+					 font-weight: bold;
+				 }
+				 .artist-name {
+					margin-left: 8rpx;
+					font-size: 20rpx;
+					color: rgb(168, 168, 168);
+				 }
+			 }
+		 }
+	}
+}

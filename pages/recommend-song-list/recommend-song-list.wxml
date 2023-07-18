@@ -1,0 +1,9 @@
+<!--pages/recommend-song-list/recommend-song-list.wxml-->
+<view class="recommend-song-list">
+   <view class="header">推荐歌单</view>
+   <view class="content">
+      <block wx:for="{{songList}}" wx:key="id">
+         <song-list-item song-list="{{item}}"></song-list-item>
+      </block>
+   </view>
+</view>

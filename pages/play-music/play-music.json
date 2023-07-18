@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "navigationBarTextStyle":"white",
+  "component": true,
+  "usingComponents": {
+    "play-music-tab":"../../components/play-music-tab/play-music-tab"
+  }
+}

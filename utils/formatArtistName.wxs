@@ -1,0 +1,17 @@
+var formatArtistName = function(nameInfo){
+	  if(!nameInfo) return
+		var _name = ""
+		var _length = nameInfo.length
+		if(_length && _length >= 2){
+			nameInfo.forEach(function(item){
+				_name = _name + "/" + item.name
+			})
+			return _name.slice(1,_name.length)
+		}else {
+			if(nameInfo[0])
+			_name = nameInfo[0].name
+			return _name
+		}
+}
+
+module.exports = formatArtistName

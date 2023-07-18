@@ -1,0 +1,13 @@
+<!--components/recommend-movie/recommend-movie.wxml-->
+<view class="recommend-movie" bindtap="itemTapHandle">
+   <view class="cover">
+	    <view class="img-cover">
+			<image class="cover-icon" src="../../assets/play2.svg"/>
+			</view>
+	    <image class="img" src="{{coverUrlData}}"/>
+	 </view>
+	 <view class="info">
+	    <view class="title">{{nameData}}-{{artistNameData}}</view>
+			<view class="publish">{{publishTimeData}}</view>
+	 </view>
+</view>

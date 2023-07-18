@@ -1,0 +1,66 @@
+/* components/song-list-swiper/song-list-swiper.wxss */
+.container {
+  white-space: nowrap;
+  width: 100%;
+  margin-left: -25rpx;
+}
+.container .song-list-swiper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .song-list-swiper .item {
+  margin-top: 20rpx;
+  height: 300rpx;
+  width: 200rpx;
+  display: inline-block;
+  margin-left: 25rpx;
+}
+.container .song-list-swiper .item:nth-last-of-type(2) {
+  margin-right: 12rpx;
+}
+.container .song-list-swiper .item .top {
+  position: relative;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx ;
+  overflow: hidden;
+}
+.container .song-list-swiper .item .top .play-count {
+  position: absolute;
+  border-radius: 35rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 35rpx;
+  top: 167rpx;
+  right: 0rpx;
+  background-color: rgba(0, 0, 0, 0.397);
+  padding: 2rpx 14rpx;
+}
+.container .song-list-swiper .item .top .play-count .play-icon {
+  margin-right: 10rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+.container .song-list-swiper .item .top .play-count .txt {
+  font-size: 18rpx;
+  color: #fff;
+}
+.container .song-list-swiper .item .top .img {
+  width: 100%;
+  height: 100%;
+}
+.container .song-list-swiper .item .info {
+  padding: 16rpx 0rpx 0 0rpx;
+  font-size: 22rpx;
+  line-height: 34rpx;
+  white-space: normal;
+  overflow-wrap: break-word !important;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

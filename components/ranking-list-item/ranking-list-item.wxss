@@ -1,0 +1,67 @@
+/* components/ranking-list-item/ranking-list-item.wxss */
+.ranking-list-item {
+  background-color: #fff;
+  padding: 0 20rpx 0 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+.ranking-list-item .header {
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ranking-list-item .header .name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+.ranking-list-item .header .frequency {
+  font-size: 20rpx;
+  color: #c9c9c9;
+}
+.ranking-list-item .content {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10rpx 0 20rpx 0;
+}
+.ranking-list-item .content .cover {
+  flex-shrink: 0;
+  border-radius: 12rpx;
+  overflow: hidden;
+  width: 150rpx;
+  height: 100%;
+}
+.ranking-list-item .content .example {
+  flex-shrink: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 150rpx;
+  padding: 0 0 0 28rpx;
+}
+.ranking-list-item .content .example .item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.ranking-list-item .content .example .item .index {
+  margin-right: 8rpx;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.ranking-list-item .content .example .item .name {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.ranking-list-item .content .example .item .artist-name {
+  margin-left: 8rpx;
+  font-size: 20rpx;
+  color: #a8a8a8;
+}

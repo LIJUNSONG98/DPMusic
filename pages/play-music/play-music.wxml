@@ -1,0 +1,83 @@
+<!--pages/play-music/play-music.wxml-->
+<wxs src="../../utils/formatArtistName.wxs" module="fan"/>
+<wxs src="../../utils/formatDuration.wxs" module="fd"/>
+<wxs src="../../utils/formatMsToS.wxs" module="fmsts"/>
+<view class="play-music">
+  <!-- 遮罩层 -->
+  <view class="mask"></view>
+	<!-- 背景图 -->
+  <image src="{{songDetail.al.picUrl}}" mode="aspectFill" class="bgc"/>
+	<!-- 状态栏占位元素 -->
+  <view class="status" style="height: {{statusBarHeight}}px;width: 100%;"></view>
+	<!-- 头部tabbar -->
+  <view class="header">
+	  <play-music-tab>
+		   <image src="../../assets/back.svg" 
+			 class="back-icon" 
+			 slot="left" 
+			 style="width: 40rpx; height: 40rpx;"
+			 bindtap="onBackTap"
+			 />
+			 <view class="tab-title" slot="center">
+			  <block wx:for="{{tabTitles}}" wx:key="*this">
+					 <view class="item {{index === tabIndex ? 'active-tab' : ''}}" 
+					 bindtap="onTabbarTap"
+					 data-index="{{index}}"
+					 >{{item}}</view>
+					 <view class="divider">|</view>
+				</block>
+			 </view>
+		</play-music-tab>
+	</view>
+	<!-- 主体内容 -->
+	<view class="content">
+		<swiper class="swiper" style="height: {{swiperHeight}}px;" bindchange="onSwiperChange" current="{{tabIndex}}">
+		<swiper-item class="music">
+			<view class="cover">
+			   <image src="{{songDetail.al.picUrl}}" style="height: 100%;width: 100%;"/>
+			</view>
+			<view class="name">{{songDetail.name}}</view>
+	    <view class="artist-name">{{fan(songDetail.ar)}}</view>
+	    <view class="lyric">{{lyric[currentLyricIndex].text}}</view>
+	    <view class="slider">
+			  <slider
+				style="width: 100%;margin: 0;"
+				block-size="12"
+				active-color="#19aabd"
+				value="{{(fmsts(currentTime)/fmsts(songDetail.dt))*1000}}"
+				bindchange="onSliderChange"
+				max="1000"
+				></slider>
+			</view>
+	    <view class="time">
+			   <view class="start">{{fd(currentTime)}}</view>
+				 <view class="end">{{fd(songDetail.dt)}}</view>
+			</view>
+	    <view class="controllers">
+			  <image wx:if="{{playMode === 0}}" src="/assets/24gl-repeat2.svg" class="mode" bindtap="onChangeMode"/>
+				<image wx:if="{{playMode === 1}}" src="/assets/24gl-repeatOnce2.svg" class="mode" bindtap="onChangeMode"/>
+				<image wx:if="{{playMode === 2}}" src="/assets/24gl-shuffle.svg" class="mode" bindtap="onChangeMode"/>
+				<image src="/assets/24gf-previousCircle.svg" bindtap="onPreSong" class="back" bindtap="onPreSong"/>
+				<image src="{{play ?  '../../assets/24gf-pauseCircle.svg' : '../../assets/24gf-playCircle.svg'}}" class="play" bindtap="onPlayTap"/>
+				<image src="/assets/24gf-nextCircle.svg" bindtap="onNextSong" class="next"/>
+				<image src="/assets/24gf-playlistMusic4.svg" class="list"/>
+			</view>
+		</swiper-item>
+		<swiper-item class="lyric">
+		  <scroll-view 
+			  class="lyric-text"
+			  scroll-y="true"
+				enable-flex="true"
+				scroll-top="{{lyricScrollTop}}"
+				scroll-with-animation="true"
+			  >
+				  <view class="placeholder"></view>
+					<block wx:for="{{lyric}}" wx:key="time">
+					   <view id="{{'my' + index}}" class="lyric-text-item {{index === currentLyricIndex ? 'active-lyric' : ''}}">{{item.text}}</view>
+				  </block>
+					<view class="placeholder"></view>
+			</scroll-view>
+		</swiper-item>
+	</swiper>
+	</view>
+</view>

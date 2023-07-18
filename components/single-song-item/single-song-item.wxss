@@ -1,0 +1,48 @@
+/* components/single-song-item/single-song-item.wxss */
+.single-song-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40rpx;
+  height: 110rpx;
+}
+.single-song-item .index {
+  flex-shrink: 0;
+  width: 64rpx;
+  text-align: center;
+  font-size: 36rpx;
+  margin-right: 18rpx;
+  color: #818181;
+}
+.single-song-item .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.single-song-item .info .name {
+  font-size: 28rpx;
+  margin-bottom: 16rpx;
+}
+.single-song-item .info .desc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-right: 60rpx;
+}
+.single-song-item .info .desc .icon {
+  flex-shrink: 0;
+  width: 20rpx;
+  height: 20rpx;
+  margin-right: 8rpx;
+}
+.single-song-item .info .desc .txt {
+  font-size: 20rpx;
+  color: #888888;
+  overflow: hidden;
+  white-space: normal;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

@@ -1,0 +1,31 @@
+<!--pages/play-video/play-video.wxml-->
+<view class="play-video">
+  <video 
+	class="video"  
+	src="{{url}}"
+	show-center-play-btn="true"
+	vslide-gesture="true"
+	play-btn-position="center"
+	object-fit="fill"/>
+	<view class="info">
+	  <text class="title">{{title}} - {{artistName}}</text>
+		<view class="desc">
+		   <text class="playcount">{{playCount}}次播放</text>
+			 <text class="publishtime">{{publishTime}}</text>
+		</view>
+	</view>
+	<scroll-view class="recommend" scroll-y="true">
+	   <view class="boundary">相关推荐</view>
+	   <block wx:for="{{mvs}}" wx:key="id">		 
+		    <recommend-movie 
+		      cover-url="{{item.imgurl}}"
+		      name="{{item.name}}"
+		      mv-id="{{item.id}}"
+		      artist-id="{{item.artist.id}}"
+		      artist-name="{{item.artist.name}}"
+		      play-count="{{item.playCount}}"
+		      publish-time="{{item.publishTime}}"
+		      ></recommend-movie>
+		 </block>
+	</scroll-view>
+</view>

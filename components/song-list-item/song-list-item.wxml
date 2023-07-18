@@ -1,0 +1,12 @@
+<!--components/song-list-item/song-list-item.wxml-->
+<wxs src="/utils/formatPlayCount.wxs" module="fpc"/>
+<view class="song-list-item">
+   <view class="top">
+	 <view class="play-count">
+	    <image src="../../assets/play2.svg"class="icon"/>
+			<text class="count">{{fpc(songList.playCount)}}</text>
+	 </view>
+	    <image src="{{songList.coverImgUrl ? songList.coverImgUrl : songList.picUrl}}" class="img"/>
+	 </view>
+	 <view class="info">{{songList.name}}</view>
+</view>

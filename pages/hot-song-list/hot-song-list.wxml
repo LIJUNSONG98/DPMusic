@@ -1,0 +1,9 @@
+<!--pages/hot-song-list/hot-song-list.wxml-->
+<view class="hot-song-list">
+   <view class="header">热门歌单</view>
+   <view class="content">
+      <block wx:for="{{songList}}" wx:key="id">
+         <song-list-item song-list="{{item}}"></song-list-item>
+      </block>
+   </view>
+</view>

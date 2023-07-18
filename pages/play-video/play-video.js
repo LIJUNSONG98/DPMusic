@@ -1,0 +1,38 @@
+// pages/play-video/play-video.js
+import {getVideoUrl,getVideoInfo,getRecommendMovie} from "../../service/getVideoUrl"
+Page({
+   data:{
+     id:0,
+     url:'',
+     artistName:"",
+     playCount:"",
+     title:"",
+     publishTime:"",
+     artistId:0,
+     mvs:[]
+   },
+   onLoad(option){
+      this.setData({
+        id:option.id,
+        artistName:option.artistName,
+        playCount:option.playCount,
+        title:option.title,
+        artistId:option.artistId
+      })
+      getVideoInfo(option.id).then(res=>{
+        this.setData({
+          publishTime:res.data.data.publishTime
+        })
+      })
+      getVideoUrl(option.id).then(res=>{
+        this.setData({
+          url:res.data.data.url
+        })
+      })
+      getRecommendMovie(option.artistId).then(res=>{
+        this.setData({
+          mvs:res.data.mvs
+        })
+      })
+   }
+})

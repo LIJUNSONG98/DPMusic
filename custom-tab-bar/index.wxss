@@ -1,0 +1,45 @@
+/* custom-tab-bar/index.wxss */
+.custom-tab-bar {
+	position: relative;
+	height:142rpx ;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #f9f9f9;
+	z-index: 9999;
+}
+
+.item {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.item .img {
+	margin-right: 15rpx ;
+}
+
+.item .img .img-content {
+	height: 64rpx;
+	width: 64rpx;
+}
+
+.item .text {
+	display: flex;
+	align-items: center;
+	height: 64rpx;
+	width: 64rpx;
+}
+
+.item .text .txt {
+	/* text-align: center; */
+	/* line-height: 64rpx; */
+	color: #c9c9c9;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.active {
+	color:#19aabd !important
+}

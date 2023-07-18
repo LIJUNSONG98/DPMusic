@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#f9f9f9",
+  "component": true,
+  "usingComponents": {
+    "recommend-song":"/components/recommend-song/recommend-song",
+    "title-tab":"/components/title-tab/title-tab",
+    "song-list-swiper":"/components/song-list-swiper/song-list-swiper",
+    "ranking-list-item":"/components/ranking-list-item/ranking-list-item"
+  }
+}

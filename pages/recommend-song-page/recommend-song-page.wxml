@@ -1,0 +1,17 @@
+<!--pages/recommend-song-page/recommend-song-page.wxml-->
+<view class="recommend-song-page">
+   <view class="header">歌曲推荐</view>
+   <view class="content"> 
+      <block wx:for="{{songList}}" wx:key="id">
+         <view class="songItem" bindtap="onSongItemTap" data-id="{{item.id}}" data-index="{{index}}">
+            <single-song-item
+              index="{{index+1}}"
+              name="{{item.name}}"
+              artist-name="{{item.ar}}"
+              album-name="{{item.al.name}}"
+              otherInfo="{{item.alia}}"
+         ></single-song-item>
+         </view>
+      </block>
+   </view>
+</view>

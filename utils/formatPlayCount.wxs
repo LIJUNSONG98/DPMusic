@@ -1,0 +1,11 @@
+function formatPlayCount(count) {
+   if(count > 100000000) {
+		 return count = (count/100000000).toFixed(1) + "万"
+	 }
+	 if(count > 10000) {
+			 return count = (count/10000).toFixed(1) + "万"
+		 }
+	  return count + "万"
+	 }
+
+	 module.exports = formatPlayCount

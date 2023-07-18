@@ -1,0 +1,34 @@
+/* components/title-tab/title-tab.wxss */
+.tab {
+	padding: 50rpx 6rpx 40rpx 6rpx;
+  display: flex;
+	justify-content: space-between;
+	align-items: center;
+		.title {
+			font-size: 30rpx;
+			font-weight: bold;
+			letter-spacing: 3rpx;
+			color: #333;
+			}
+		.more {
+			margin-right: 40rpx;
+			position: relative;
+			font-size: 22rpx;
+			color: rgb(136, 136, 136);
+		&::after {
+				content: "";
+				display: block;
+				width: 10rpx;
+				height: 10rpx;
+				border-right: 2rpx solid rgb(136, 136, 136);
+				border-bottom: 2rpx solid rgb(136, 136, 136);
+				transform: rotate(-45deg);
+				position:absolute;
+				top: 8rpx;
+				right: -25rpx;
+				}
+			}
+		}
+		.hidden {
+			display: none !important;
+		}

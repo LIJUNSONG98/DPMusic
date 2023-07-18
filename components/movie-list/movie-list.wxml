@@ -1,0 +1,22 @@
+<!--components/movie-list/movie-list.wxml-->
+<view class="movie-list">
+<block wx:for="{{ movieList }}" wx:key="id">
+	<view class="item" data-item="{{item}}" bindtap="itemTapHandle">
+	  <view class="cover">
+	    <image class="img" src="{{ item.cover }}"/>
+	    <view class="controls">
+			   <view class="play-count">
+			      <image class="icon" src="../../assets/play2.svg"/>
+			      <view class="number">
+						{{item.playCount}}
+						</view>
+			   </view>
+			   <view class="duration">{{item.duration}}</view>
+			</view>
+	  </view>
+	  <view class="info">
+	    <text class="txt">{{item.name}}</text>
+	  </view>
+	</view>
+</block>
+</view>

@@ -1,0 +1,13 @@
+<!--components/single-song-item/single-song-item.wxml-->
+<wxs src="/utils/formatArtistName.wxs" module="fan"/>
+<wxs src="/utils/formateAlia.wxs" module="fa"/>
+<view class="single-song-item">
+  <view class="index">{{index}}</view>
+	<view class="info">
+	   <view class="name">{{name}}</view>
+		 <view class="desc">
+			<image src="/assets/hot.svg" class="icon"/>
+		  <text class="txt">{{fan(artistName)}} · {{albumName}}{{fa(otherInfo)}}</text>
+		 </view>
+	</view>
+</view>

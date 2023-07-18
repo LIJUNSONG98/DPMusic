@@ -1,0 +1,6 @@
+var formatMsToS = function(ms) {
+	var _s = Math.ceil(ms/1000)
+	return _s
+}
+
+module.exports = formatMsToS

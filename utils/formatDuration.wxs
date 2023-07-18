@@ -1,0 +1,13 @@
+var formatDuration = function(duration) {
+	 var _minute = Math.floor(duration/1000/60)
+	 var _second = Math.floor(duration/1000 - _minute*60)
+	 if(_minute < 10) {
+		 _minute = "0" + _minute
+	 }
+	 if(_second < 10) {
+		 _second = "0" + _second
+	 }
+	 return _minute + ":" + _second
+}
+
+module.exports = formatDuration

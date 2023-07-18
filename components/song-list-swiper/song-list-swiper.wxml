@@ -1,0 +1,18 @@
+<wxs src="../../utils/formatPlayCount.wxs" module="fpc"/>
+<view class="container">
+	<scroll-view class="song-list-swiper" scroll-x="true" enable-flex="true" style="{{style}}">
+    <block wx:for="{{playList}}" wx:key="id">
+		   <view class="item" bindtap="onItemTap" data-id="{{item.id}}">
+				<view class="top">
+				   <view class="play-count">
+					    <image src="../../assets/play2.svg" class="play-icon"/>
+							<text class="txt">{{fpc(item.playCount)}}</text>
+					 </view>
+				   <image class="img" src="{{item.coverImgUrl ? item.coverImgUrl : item.picUrl}}"/>
+				</view>
+				   <view class="info">{{item.name}}</view>
+			 </view>
+		</block>
+		<view style="opacity:0;width:0;height:0;">-</view>
+</scroll-view>
+</view>

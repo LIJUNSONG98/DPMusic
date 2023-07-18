@@ -1,0 +1,20 @@
+<!--components/ranking-list-item/ranking-list-item.wxml-->
+<wxs src="../../utils/formatArtistName.wxs" module="fan"/>
+<view class="ranking-list-item">
+   <view class="header">
+	    <view class="name">{{name}}</view>
+			<view class="frequency">{{updateFrequency}}</view>
+	 </view>
+	 <view class="content" bindtap="onItemTap" data-id="{{listId}}">
+	   <image src="{{songList[0].al.picUrl}}" mode="aspectFit" class="cover"/>
+		 <view class="example">
+		   <block wx:for="{{songList}}" wx:key="id">
+					   <view class="item">
+						    <view class="index">{{index + 1}}</view>
+								<view class="name">{{item.name}} </view>
+								<view class="artist-name"> - {{fan(item.ar)}}</view>
+						 </view>
+			 </block>
+		 </view>
+	 </view>
+</view>

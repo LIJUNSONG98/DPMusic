@@ -1,0 +1,13 @@
+<!--pages/main-video/main-video.wxml-->
+<view class="main-video">
+<view class="nav">
+	<block wx:for="{{navData}}" wx:key="name">
+	  <view class="item">
+		  <view class="txt {{index === currentIndex ? 'active':''}}" bindtap="navTapHandle" data-index="{{index}}" data-type="{{item.type}}">{{item.name}}</view>
+		</view>
+	</block>
+</view>
+	<movie-list list-data="{{ movieList }}" wx:if="{{type === '全部'}}"></movie-list>
+	<movie-list list-data="{{ movieList }}" wx:if="{{type === '官方版'}}"></movie-list>
+</view>
+

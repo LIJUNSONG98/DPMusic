@@ -1,0 +1,10 @@
+<!--components/recommend-song/recommend-song.wxml-->
+<view class="recommend-song">
+   <view class="cover">
+	   <image class="cover-img" src="{{imgUrlData}}"/>
+	 </view>
+	 <view class="info">
+	   <text class="song-name">{{nameData}}</text>
+		 <text class="artist">{{artistNameData}} · {{albumNameData}}</text>
+	 </view>
+</view>

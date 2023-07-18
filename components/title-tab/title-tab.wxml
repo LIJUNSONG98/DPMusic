@@ -1,0 +1,7 @@
+<!--components/title-tab/title-tab.wxml-->
+<view class="tab">
+			<view class="title">
+				<slot></slot>
+			</view>
+			<view class="more {{showMoreData === 'hidden' ? 'hidden':''}}" bindtap="onMoreTap" data-url="{{navigateTo}}">更多</view>
+</view>

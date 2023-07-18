@@ -1,0 +1,42 @@
+/* components/play-music-tab/play-music-tab.wxss */
+.play-music-tab {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 44px;
+  padding: 0 40rpx;
+}
+.play-music-tab .left {
+  flex: 1;
+  height: 100%;
+}
+.play-music-tab .left .left-slot {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.play-music-tab .center {
+  flex: 1;
+}
+.play-music-tab .center .center-slot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.play-music-tab .right {
+  flex: 1;
+  height: 100%;
+}
+.left-default {
+  display: none;
+}
+.left-slot:empty + .left-default {
+  display: inline-block;
+}
+.center-default {
+  display: none;
+}
+.center-slot:empty + .center-default {
+  display: inline-block;
+}

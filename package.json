@@ -1,0 +1,7 @@
+{
+  "description": "",
+  "dependencies": {
+    "js-mini-store": "^1.0.0",
+    "tdesign-miniprogram": "^1.1.12"
+  }
+}

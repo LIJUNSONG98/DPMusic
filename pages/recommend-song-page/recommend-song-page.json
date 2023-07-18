@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "歌曲推荐",
+  "component": true,
+  "usingComponents": {
+    "single-song-item":"/components/single-song-item/single-song-item"
+  }
+}

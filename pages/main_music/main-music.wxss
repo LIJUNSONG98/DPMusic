@@ -1,0 +1,29 @@
+/* pages/main_music/main-music.wxss */
+.t-search__input-box {
+  height: 60rpx !important;
+  background-color: #fff !important;
+}
+.t-search__input-box .t-input__keyword {
+  font-size: 24rpx !important;
+}
+.t-icon-search {
+  font-size: 32rpx !important;
+}
+.main-page {
+  padding: 0 25rpx 150rpx 25rpx;
+  background-color: #f9f9f9;
+}
+.main-page .banner {
+  margin-top: 50rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.main-page .banner .swiper .swiper-item .swiper-img {
+  width: 100%;
+}
+.main-page .song-recommend {
+  width: 100%;
+}
+.main-page .song-recommend .content {
+  width: 100%;
+}

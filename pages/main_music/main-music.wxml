@@ -1,0 +1,78 @@
+<!--pages/main_music/main-music.wxml-->
+<view class="main-page">
+<!-- 搜索框 -->
+	<view class="search-box" bindtap="searchBoxTapHandle">
+     <t-search placeholder="请输入搜索关键字" shape="round" disabled="true"/>
+  </view>
+<!-- 轮播图 -->
+	<view class="banner">
+	 <swiper class="swiper" 
+	 style="height: {{swiperHeight}}px"
+	 autoplay="true"
+	 indicator-dots="true"
+	 indicator-active-color="#fff"
+	 indicator-color="#f9f9f993"
+	 circular="true"
+	 >
+	    <block wx:for="{{swiperList}}" wx:key="targetId">
+				<swiper-item class="swiper-item">
+			    <image class="swiper-img" src="{{item.imageUrl}}" mode="widthFix" bindload="onImageLoad"/>
+		    </swiper-item>
+			</block>
+	 </swiper>
+	</view>
+<!-- 歌曲推荐 -->
+  <view class="song-recommend">
+	  <title-tab class="title-tab" navigateTo="/pages/recommend-song-page/recommend-song-page">
+		   <view>歌曲推荐</view>
+		</title-tab>
+		<view class="content">
+		  <block wx:for="{{recommendSong}}" wx:key="name">
+			   <view class="recommend-song" bindtap="onSingleSongTap" data-id="{{item.id}}" data-index="{{index}}">
+					<recommend-song 
+				   img-url="{{item.al.picUrl}}"
+				   name="{{item.name}}"
+				   artist-name="{{item.ar}}"
+				   id="{{item.id}}"
+				   album-name="{{item.al.name}}"
+				  ></recommend-song>
+				 </view>
+			</block>
+		</view>
+	</view>
+<!-- 热门歌单 -->
+  <view class="song-list">
+	   <title-tab navigateTo="/pages/hot-song-list/hot-song-list">
+		    <view>热门歌单</view>
+		 </title-tab>
+		 <view class="content">
+					<song-list-swiper play-list="{{hotSongList}}"></song-list-swiper>
+		 </view>
+	</view>
+<!-- 推荐歌单 -->
+<view class="recommend-list">
+   <title-tab navigateTo="/pages/recommend-song-list/recommend-song-list">
+	    <view>推荐歌单</view>
+	 </title-tab>
+	 <view class="content">
+					<song-list-swiper play-list="{{recommendSongList}}"></song-list-swiper>
+		 </view>
+</view>
+<!-- 排行榜 -->
+<view class="top-list">
+   <title-tab showMore="hidden">
+	    <view>排行榜</view>
+	 </title-tab>
+	 <view class="content">
+	    <block wx:for="{{rankingList}}" wx:key="id">
+				<ranking-list-item
+				list-id="{{item.id}}"
+				name="{{item.name}}"
+				update-frequency="{{item.updateFrequency}}"
+				></ranking-list-item>
+			</block>
+	 </view>
+</view>
+</view>
+
+

@@ -1,0 +1,44 @@
+/* pages/play-video/play-video.wxss */
+.play-video {
+  height: 100vh;
+}
+.play-video .video {
+  width: 100%;
+}
+.play-video .info {
+  padding: 16rpx 25rpx 0 25rpx;
+}
+.play-video .info .title {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.play-video .info .desc .playcount {
+  font-size: 25rpx;
+  color: #8b8b8b;
+  margin-right: 18rpx;
+}
+.play-video .info .desc .publishtime {
+  font-size: 25rpx;
+  color: #8b8b8b;
+}
+.play-video .recommend {
+  background-color: rgba(250, 250, 250, 0.897);
+  padding: 60rpx 25rpx 50rpx 25rpx;
+  height: calc(100% - 225px);
+}
+.play-video .recommend .boundary {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 35rpx;
+}
+.play-video .recommend .boundary::before {
+  content: '';
+  display: inline-block;
+  position: relative;
+  top: 7rpx;
+  height: 36rpx;
+  width: 5rpx;
+  background-color: #19aabd;
+  margin-right: 7rpx;
+}

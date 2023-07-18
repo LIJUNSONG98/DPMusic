@@ -1,0 +1,18 @@
+<!--components/play-music-tab/play-music-tab.wxml-->
+<view class="play-music-tab">
+   <view class="left">
+	    <!-- 左插槽 -->
+	    <view class="left-slot">
+				<slot name="left" />
+			</view>
+			<view class="left-default">返回</view>
+	 </view>
+	 <view class="center">
+	    <!-- 中部插槽 -->
+	    <view class="center-slot">
+				<slot name="center"></slot>
+			</view>
+			<view class="center-default">我是title</view>
+	 </view>
+	 <view class="right"></view>
+</view>

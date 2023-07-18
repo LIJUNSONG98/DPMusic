@@ -1,0 +1,53 @@
+/* components/recommend-song/recommend-song.wxss */
+.recommend-song {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.recommend-song .cover {
+  height: 100%;
+  width: 150rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+.recommend-song .cover .cover-img {
+  width: 100%;
+  height: 100%;
+}
+.recommend-song .info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 25rpx;
+  margin-left: 8rpx;
+  height: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.recommend-song .info::after {
+  content: "";
+  display: block;
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 4rpx solid #888888;
+  border-bottom: 4rpx solid #888888;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 61rpx;
+  right: 30rpx;
+}
+.recommend-song .info .song-name {
+  font-size: 28rpx;
+  color: #222;
+  margin-bottom: 15rpx;
+}
+.recommend-song .info .artist {
+  padding-right: 60rpx;
+  font-size: 22rpx;
+  color: #888888;
+}

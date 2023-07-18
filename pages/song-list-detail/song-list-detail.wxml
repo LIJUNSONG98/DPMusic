@@ -1,0 +1,68 @@
+<!--pages/song-list-detail/song-list-detail.wxml-->
+<wxs src="../../utils/formatArtistName.wxs" module="fan"/>
+<view class="song-list-detail">
+<!-- 弹出层 -->
+   <t-dialog visible="{{visible}}" confirm-btn="确认" bind:confirm="onConfirmTap" title="简介">
+  <scroll-view class="scroll-view" slot="content" scroll-y="true">
+		<view class="content">
+		   <block wx:for="{{briefArray}}" wx:key="*this">
+				 <view>{{item}}</view>
+			 </block>
+		</view>
+	</scroll-view>
+   </t-dialog>
+<!-- 顶部封面 -->
+   <view class="cover">
+	    <view class="mask"></view>
+	    <image src="{{songListDetail.coverImgUrl}}" mode="aspectFill" class="bgc"/>
+			<!-- 封面中的内容 -->
+			<view class="info">
+			<!-- 歌单封面小图 -->
+				<view class="little-cover">
+			   <image src="{{songListDetail.coverImgUrl}}" class="little-cover-img"/>
+			  </view>
+				<!-- 歌单信息描述 -->
+				<view class="desc">
+				<!-- 歌单名 -->
+				   <view class="title">{{songListDetail.name}}</view>
+					 <!-- 作者信息 -->
+					 <view class="creator">
+					    <image src="{{songListDetail.creator.avatarUrl}}" class="avatar"/>
+							<text class="creator-name">{{songListDetail.creator.nickname}}</text>
+					 </view>
+					 <!-- 简介 -->
+					 <view class="brief" bindtap="onBriefTap">
+					    <view class="txt">简介：{{songListDetail.description}}</view>
+					 </view>
+				</view>
+			</view>
+	 </view>
+<!-- 歌曲列表 -->
+   <view class="song-list">
+	 <block wx:for="{{allSongs}}" wx:key="id">
+		 <view class="songItem" bindtap="onSongItemTap" data-id="{{item.id}}" data-index="{{index}}">
+			<single-song-item
+		  index="{{index+1}}"
+			name="{{item.name}}"
+			artist-name="{{item.ar}}"
+			album-name="{{item.al.name}}"
+			other-info="{{item.alia}}"
+		 >
+		 </single-song-item>
+		 </view>
+	 </block>
+	 </view>
+<!-- 底部提示 -->
+<view class="bottom {{isLoading ? 'hidden' : ''}}">-- 到底啦~ --</view>
+<!-- loading -->
+<view class="loading">
+	<t-loading theme="custom" class="wrapper" loading="{{isLoading}}">
+    <image
+      slot="indicator"
+      style="width: 34rpx; height: 34rpx"
+      src="/assets/loadingpic.svg"
+    />
+  </t-loading>
+</view>
+</view>
+
