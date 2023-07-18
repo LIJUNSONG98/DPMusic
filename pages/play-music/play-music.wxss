@@ -145,9 +145,20 @@
   height: 40%;
   width: 100%;
 }
+.play-music .play-list-title {
+  height: 8vh;
+  line-height: 8vh;
+  text-align: center;
+}
+.play-music .play-list {
+  padding-bottom: 2vh;
+}
 .active-tab {
   color: #fff !important;
 }
 .active-lyric {
   color: #19aabd !important;
+}
+.t-popup {
+  height: 60vh !important;
 }

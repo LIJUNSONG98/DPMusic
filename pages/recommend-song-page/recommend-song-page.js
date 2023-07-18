@@ -10,7 +10,6 @@ Page({
       this.setData({
         songList:res.data.songs
       })
-      console.log(res.data.songs[0].id);
     })
   },
   onSongItemTap(e){

@@ -40,6 +40,7 @@
     "t-button": "tdesign-miniprogram/button/button",
     "t-search": "tdesign-miniprogram/search/search",
     "t-dialog": "tdesign-miniprogram/dialog/dialog",
-    "t-loading": "tdesign-miniprogram/loading/loading"
+    "t-loading": "tdesign-miniprogram/loading/loading",
+    "t-popup": "tdesign-miniprogram/popup/popup"
   }
 }

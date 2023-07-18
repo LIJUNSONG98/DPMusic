@@ -32,6 +32,7 @@
 	<!-- 主体内容 -->
 	<view class="content">
 		<swiper class="swiper" style="height: {{swiperHeight}}px;" bindchange="onSwiperChange" current="{{tabIndex}}">
+		 <!-- 歌曲部分 -->
 		<swiper-item class="music">
 			<view class="cover">
 			   <image src="{{songDetail.al.picUrl}}" style="height: 100%;width: 100%;"/>
@@ -60,9 +61,10 @@
 				<image src="/assets/24gf-previousCircle.svg" bindtap="onPreSong" class="back" bindtap="onPreSong"/>
 				<image src="{{play ?  '../../assets/24gf-pauseCircle.svg' : '../../assets/24gf-playCircle.svg'}}" class="play" bindtap="onPlayTap"/>
 				<image src="/assets/24gf-nextCircle.svg" bindtap="onNextSong" class="next"/>
-				<image src="/assets/24gf-playlistMusic4.svg" class="list"/>
+				<image src="/assets/24gf-playlistMusic4.svg" class="list" bindtap="onPlayListTap"/>
 			</view>
 		</swiper-item>
+		 <!-- 歌词部分 -->
 		<swiper-item class="lyric">
 		  <scroll-view 
 			  class="lyric-text"
@@ -80,4 +82,22 @@
 		</swiper-item>
 	</swiper>
 	</view>
+	<!-- 播放列表弹出层 -->
+	<t-popup visible="{{isShowPlayList}}"  placement="bottom" bind:visible-change="onVisibleChange">
+		 <view class="play-list-title">播放列表</view>
+     <scroll-view class="play-list" scroll-y="true" style="height: 55vh;">
+			<block wx:for="{{songList}}" wx:key="id">
+				<view class="songItem" bindtap="onSongItemTap" data-id="{{item.id}}" data-index="{{index}}">
+					<single-song-item
+              index="{{index+1}}"
+              name="{{item.name}}"
+              artist-name="{{item.ar}}"
+              album-name="{{item.al.name}}"
+              other-info="{{item.alia}}"
+              song-id="{{item.id}}"
+         ></single-song-item>
+        </view>
+			</block>
+		 </scroll-view>
+  </t-popup>
 </view>

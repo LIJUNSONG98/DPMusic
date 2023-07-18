@@ -3,6 +3,7 @@
   "navigationBarTextStyle":"white",
   "component": true,
   "usingComponents": {
-    "play-music-tab":"../../components/play-music-tab/play-music-tab"
+    "play-music-tab":"../../components/play-music-tab/play-music-tab",
+    "single-song-item":"../../components/single-song-item/single-song-item"
   }
 }

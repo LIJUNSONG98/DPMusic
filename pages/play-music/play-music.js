@@ -26,7 +26,9 @@ Page({
     lyricScrollTop:"",
 
     songList:[],
-    currentSongIndex:-1
+    currentSongIndex:-1,
+
+    isShowPlayList:false
   },
   onLoad(){
     console.log("触发onLoad");
@@ -34,6 +36,7 @@ Page({
     this.fetchData(this.options.id)
     //监听全局状态管理中的歌曲列表数据的变化
     userStore.onStates(["songList","currentSongId","currentSongIndex"],(v)=>{
+      if(!v.songList && !v.currentSongIndex) return
       this.setData({
         songList:v.songList,
         currentSongIndex:v.currentSongIndex
@@ -146,7 +149,7 @@ Page({
       //顺序播放
       case 0:
         _index = ((mode === "pre") ? (currentIndex -1) : (currentIndex + 1))
-        if(_index === this.data.songList.length) _index = 0
+        if(_index === this.data.songList?.length) _index = 0
         if(_index === -1) _index = this.data.songList.length - 1 
         innerAudioContext.loop = false
         break
@@ -168,13 +171,14 @@ Page({
 
   },
   // 发送网络请求获取数据
-  fetchData(SongId){
-    getSingleSong(SongId).then(res=>{
+  fetchData(songId){
+    userStore.setState("currentSongId",songId)
+    getSingleSong(songId).then(res=>{
       this.setData({
         songDetail:res.data.songs[0]
       })
     })
-    getSongUrl(SongId).then(res=>{
+    getSongUrl(songId).then(res=>{
       this.setData({
         songUrl:res.data.data[0].url,
         play:true
@@ -183,7 +187,7 @@ Page({
       innerAudioContext.src = this.data.songUrl
       innerAudioContext.autoplay = true
     })
-    getLyric(SongId).then(res=>{
+    getLyric(songId).then(res=>{
       this.setData({
         lyric:formatLyric(res.data.lrc.lyric)
       })
@@ -196,5 +200,22 @@ Page({
     this.setData({
       playMode:mode
     })
+  },
+  // 显示/隐藏播放列表
+  onPlayListTap(){
+    this.setData({
+      isShowPlayList:!this.data.isShowPlayList
+    })
+    console.log(this.data.isShowPlayList);
+  },
+  onVisibleChange(e) {
+    this.setData({
+      isShowPlayList: e.detail.visible,
+    });
+  },
+
+  onSongItemTap(e) {
+    userStore.setState("currentSongId",e.currentTarget.dataset.id)
+    this.fetchData(e.currentTarget.dataset.id)
   }
 })
